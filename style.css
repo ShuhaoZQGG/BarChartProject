@@ -4,3 +4,45 @@ body{
 h1{
   color: red;
 }
+
+.chart{
+  color: black;
+  margin: auto;
+  border: 10px;
+  border-radius: 2px;
+  border-style: solid;
+  height: 85vh
+}
+
+.bars{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 25%;
+  float: left;
+  width: 30px;
+  bottom: 100px;
+  background-color: #74b9ff;
+  color: #74b9ff;
+}
+
+.blank{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 25%;
+  float: left;
+  width: 20px;
+  bottom: 50px;
+  background-color:white;
+  color: white;
+}
+
+.xLabel{
+  position: absolute;
+  margin-left: 50px;
+  bottom: 200px;
+  margin-bottom: 0;
+  width: 200px;
+  height: 2px;
+  background-color: black;
+  color: black;
+}
