@@ -29,5 +29,11 @@ console.log(bar_5_width);
 console.log(bar_5_marginLeft);
 console.log(xLabel_marginLeft);
 
+$('.xLabel').each(function(){
+  for (let barVal of barVals){
+    $('.xLabel').append($('<p class = xLabels></p>').text(barVals.indexOf(barVal)).attr('id',"xlabel"+barVals.indexOf(barVal)).css('margin-left', 50 * barVals.indexOf(barVal)+bar_5_width/2));
+  }
+})
+
 }
 );

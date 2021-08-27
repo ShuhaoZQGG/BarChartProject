@@ -46,3 +46,9 @@ h1{
   background-color: black;
   color: black;
 }
+
+.xLabels{
+  position: absolute;
+  float: left;
+  margin-left: 0;
+}
