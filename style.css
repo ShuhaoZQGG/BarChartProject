@@ -52,3 +52,22 @@ h1{
   float: left;
   margin-left: 0;
 }
+
+.yLabel{
+  position: absolute;
+  bottom: 200px;
+  margin-left: 0px;
+  height: 500px;
+  width: 2px;
+  background-color: black;
+}
+
+.yLabels{
+  position:absolute;
+}
+.values{
+  position: absolute;
+  color: black;
+  bottom: 100px;
+  margin-left: 5px;
+}
