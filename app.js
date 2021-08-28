@@ -1,7 +1,7 @@
 
 const barVals = [10, 150, 200, 100, 80, 90];
 const numberOfBars = barVals.length;
-const colors = ['red','blue','green']
+const colors = ['#ff6b6b','#48dbfb','#1dd1a1']
 let models = 0;
 let count = 0;
 $(document).ready(function(){
@@ -28,7 +28,6 @@ $('.chart').each(function(){
   //for (let key in json){
     for (let j = 0; j<keys.length; j++){
     for (let i = 0; i < json[key].length; i++){
-    console.log(distanceFromBottom);
 
     $('.chart').append($("<div class = bars id = bars ></div>")
     //.attr('class','bars'+ key)
@@ -37,6 +36,7 @@ $('.chart').each(function(){
     //.css('background-color', colors[Object.keys(json).indexOf(key)] )
     //.attr('id',"bar" + key+json[key][i].xlabel)
     .attr('id','bar'+keys[j] + json[keys[j]][i].xlabel)
+    .text(json[keys[j]][i].ylabel)
     .css('position','absolute')
     .css('width',50)
     .css('float','left')
@@ -51,6 +51,49 @@ $('.chart').each(function(){
 
   }
 })
+
+let maximumHeight = 0;
+let eachHeight = [0,0,0,0];
+let xlabels = ['','','',''];
+for (let j = 0; j < json[key].length; j++){
+  for (let i = 0; i < keys.length; i++){
+  eachHeight[j] += json[keys[i]][j].ylabel;
+  xlabels[j] = json[keys[i]][j].xlabel
+  }
+  if (eachHeight[j] > maximumHeight){
+    maximumHeight = eachHeight[j];
+  }
+
+}
+console.log(xlabels)
+
+console.log(maximumHeight);
+
+$('.xLabel').each(function(){
+  for (let i = 0; i < xlabels.length; i++){
+    $('.xLabel')
+    .css('margin-left',100)
+    .css('width', 400)
+    .append($('<p class = xLabels></p>')
+    .text(xlabels[i])
+    .attr('id',"xlabel"+ xlabels[i])
+    .css('margin-left', 20 + i * 100 ));
+  }
+})
+
+$('.yLabel').each(function(){
+  for (let i = 0; i <= maximumHeight; i += maximumHeight/10){
+    $('.yLabel')
+    .css('height',maximumHeight/10)
+    .css('margin-left',100)
+    .append($('<p class = yLabels></p>')
+    .text(i)
+    .attr('id',"label"+ i)
+    .css('margin-left',-50)
+    .css("bottom",i/10-30));
+  }})
+
+
 /*
 $('.chart').each(function(){
   for (let barVal of barVals){

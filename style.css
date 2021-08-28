@@ -1,15 +1,15 @@
 body{
-  background-color: bisque;
+  background-color: #8395a7;
 }
 h1{
-  color: red;
+  color: #5f27cda4;
 }
 
 .chart{
   color: black;
   margin: auto;
-  border: 10px;
-  border-radius: 2px;
+  border: 2px;
+  border-radius: 0.5px;
   border-style: solid;
   height: 85vh
 }
