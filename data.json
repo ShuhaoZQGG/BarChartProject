@@ -1,56 +1,56 @@
 {
-  "modelA":[
+  "ModelA":[
     {
-      "month": "Jan",
-      "sales": 1000
+      "xlabel": "Jan",
+      "ylabel": 1000
     },
     {
-      "month": "May",
-      "sales": 1500
+      "xlabel": "May",
+      "ylabel": 1500
     },
     {
-      "month": "Sep",
-      "sales": 2500
+      "xlabel": "Sep",
+      "ylabel": 2500
     },
     {
-      "month": "Dec",
-      "sales": 750
+      "xlabel": "Dec",
+      "ylabel": 750
     }
   ],
-  "modelB":[
+  "ModelB":[
     {
-      "month": "Jan",
-      "sales": 800
+      "xlabel": "Jan",
+      "ylabel": 800
     },
     {
-      "month": "May",
-      "sales": 2000
+      "xlabel": "May",
+      "ylabel": 2000
     },
     {
-      "month": "Sep",
-      "sales": 2050
+      "xlabel": "Sep",
+      "ylabel": 2050
     },
     {
-      "month": "Dec",
-      "sales": 1220
+      "xlabel": "Dec",
+      "ylabel": 1220
     }
   ],
-  "modelC":[
+  "ModelC":[
     {
-      "month": "Jan",
-      "sales": 500
+      "xlabel": "Jan",
+      "ylabel": 500
     },
     {
-      "month": "May",
-      "sales": 1300
+      "xlabel": "May",
+      "ylabel": 1300
     },
     {
-      "month": "Sep",
-      "sales": 1900
+      "xlabel": "Sep",
+      "ylabel": 1900
     },
     {
-      "month": "Dec",
-      "sales": 2500
+      "xlabel": "Dec",
+      "ylabel": 2500
     }
   ]
 }
