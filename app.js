@@ -2,7 +2,6 @@
 const barVals = [10, 150, 200, 100, 80, 90];
 const numberOfBars = barVals.length;
 const colors = ['#ff6b6b','#48dbfb','#1dd1a1']
-let models = 0;
 let count = 0;
 $(document).ready(function(){
 $.getJSON('data.json',function(json){
@@ -53,8 +52,15 @@ $('.chart').each(function(){
 })
 
 let maximumHeight = 0;
-let eachHeight = [0,0,0,0];
-let xlabels = ['','','',''];
+let eachHeight = [];
+let xlabels = [];
+for (let i = 0; i < json[key].length;i++){
+  eachHeight.push(0);
+  xlabels.push('');
+}
+
+
+
 for (let j = 0; j < json[key].length; j++){
   for (let i = 0; i < keys.length; i++){
   eachHeight[j] += json[keys[i]][j].ylabel;
@@ -65,6 +71,7 @@ for (let j = 0; j < json[key].length; j++){
   }
 
 }
+
 console.log(xlabels)
 
 console.log(maximumHeight);
@@ -72,12 +79,12 @@ console.log(maximumHeight);
 $('.xLabel').each(function(){
   for (let i = 0; i < xlabels.length; i++){
     $('.xLabel')
-    .css('margin-left',100)
+    .css('margin-left',70)
     .css('width', 400)
     .append($('<p class = xLabels></p>')
     .text(xlabels[i])
     .attr('id',"xlabel"+ xlabels[i])
-    .css('margin-left', 20 + i * 100 ));
+    .css('margin-left', 45 + i * 100 ));
   }
 })
 
@@ -85,7 +92,7 @@ $('.yLabel').each(function(){
   for (let i = 0; i <= maximumHeight; i += maximumHeight/10){
     $('.yLabel')
     .css('height',maximumHeight/10)
-    .css('margin-left',100)
+    .css('margin-left',70)
     .append($('<p class = yLabels></p>')
     .text(i)
     .attr('id',"label"+ i)
@@ -93,7 +100,25 @@ $('.yLabel').each(function(){
     .css("bottom",i/10-30));
   }})
 
-
+  $('.legends').each(function(){
+    for (let i = 0; i < models.length; i++){
+      $('.legends')
+        .append($('<div class = legend></div>')
+        .attr('id', models[i] + 'Legend')
+        .css('background-color',colors[i])
+        .css('margin-top', 0)
+        .css('margin-left',0)
+        .css('height',50)
+        .css('width',100)
+        .css('border-radius',15)
+        .append($('<p></p>')
+        .text(models[i])
+        .css('text-align', 'center')
+        .css('line-height', 3)
+        )
+        )
+    }
+  })
 /*
 $('.chart').each(function(){
   for (let barVal of barVals){
